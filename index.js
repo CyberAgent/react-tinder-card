@@ -48,8 +48,9 @@ const animateBack = (element) => {
   const rotation = rotationString(getRotation(element) * -settings.bouncePower)
   element.style.transform = translation + rotation
 
-  element.style.transform = 'none'
-  element.style.transition = '0ms'
+  setTimeout(() => {
+    element.style.transform = 'none'
+  }, settings.snapBackDuration * 0.1)
 
   setTimeout(() => {
     element.style.transition = '10ms'
